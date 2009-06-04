@@ -22,6 +22,7 @@
 package org.sakaiproject.site.cover;
 
 import org.sakaiproject.component.cover.ComponentManager;
+import org.sakaiproject.site.api.Site;
 
 /**
  * <p>
@@ -215,6 +216,8 @@ public class SiteService
 	  
  		return service.addSite(param0, param1, param2);
  	}
+ 	
+
  
  	public static org.sakaiproject.site.api.Site addSite(java.lang.String param0, java.lang.String param1)
  	throws org.sakaiproject.exception.IdInvalidException, org.sakaiproject.exception.IdUsedException,
@@ -235,6 +238,16 @@ public class SiteService
 		if (service == null) return null;
 
 		return service.addSite(param0, param1);
+	}
+
+	public static org.sakaiproject.site.api.Site addSite(java.lang.String param0, org.sakaiproject.site.api.Site param1, java.lang.String param2)
+	throws org.sakaiproject.exception.IdInvalidException, org.sakaiproject.exception.IdUsedException,
+	org.sakaiproject.exception.PermissionException
+	{
+		org.sakaiproject.site.api.SiteService service = getInstance();
+			if (service == null) return null;
+				
+		return service.addSite(param0, param1, param2);
 	}
 
 	public static boolean allowRemoveSite(java.lang.String param0)
@@ -465,5 +478,6 @@ public class SiteService
 
 		return service.getLayoutNames();
 	}
+
 
 }
