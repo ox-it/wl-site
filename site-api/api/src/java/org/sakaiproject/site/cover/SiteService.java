@@ -479,5 +479,12 @@ public class SiteService
 		return service.getLayoutNames();
 	}
 
+	public static String lookupSiteAlias(String siteId)
+	{
+		org.sakaiproject.site.api.SiteService service = getInstance();
+		if (service == null) return null;
+
+		return service.lookupSiteAlias(siteId);
+	}
 
 }
