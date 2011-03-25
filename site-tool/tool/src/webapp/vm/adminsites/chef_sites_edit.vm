@@ -92,6 +92,17 @@
 			</tr>
 			<tr>
 				<th>
+					<label for="softlyDeleted">
+						$tlang.getString("sitedi.deleted")
+					</label>
+				</th>
+				<td   class="checkbox">
+					<input type="radio" value="true" name="softlyDeleted" id="softlyDeletedtrue" #if ($site.isSoftlyDeleted()) checked="checked" #end /><label for="SoftlyDeletedtrue">  $tlang.getString("sitedi.yes")</label>
+					<input type="radio" value="false" name="softlyDeleted" id="softlyDeletedfalse" #if (!$site || !$site.isSoftlyDeleted()) checked="checked" #end /><label for="SoftlyDeletedfalse"> $tlang.getString("sitedi.no") </label>
+				</td>
+			</tr>
+			<tr>
+				<th>
 					<label for="joinable">
 						$tlang.getString("sitedi.joi")
 					</label>
