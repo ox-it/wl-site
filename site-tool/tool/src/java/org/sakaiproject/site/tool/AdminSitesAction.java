@@ -1150,6 +1150,10 @@ public class AdminSitesAction extends PagedResourceActionII
 				{
 					addAlert(state, rb.getString("sitact.youdonot3") + " " + site.getId());
 				}
+				catch (IdUnusedException e)
+				{
+					addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
+				}
 			}
 		}
 
@@ -1206,6 +1210,10 @@ public class AdminSitesAction extends PagedResourceActionII
 		{
 			addAlert(state, rb.getString("sitact.youdonot3") + " " + site.getId());
 		}
+		catch (IdUnusedException e)
+		{
+			addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
+		}
 
 		// cleanup
 		cleanState(state);
@@ -1251,6 +1259,7 @@ public class AdminSitesAction extends PagedResourceActionII
 		String icon = StringUtil.trimToNull(data.getParameters().getString("icon"));
 		String info = StringUtil.trimToNull(data.getParameters().getString("info"));
 		boolean published = data.getParameters().getBoolean("published");
+		boolean softlyDeleted = data.getParameters().getBoolean("softlyDeleted");
 		String skin = StringUtil.trimToNull(data.getParameters().getString("skin"));
 		boolean pubView = data.getParameters().getBoolean("pubView");
 		boolean customOrder = data.getParameters().getBoolean("customOrder");
@@ -1353,6 +1362,7 @@ public class AdminSitesAction extends PagedResourceActionII
 			site.setType(type);
 			site.setPubView(pubView);
 			site.setPublished(published);
+			site.setSoftlyDeleted(softlyDeleted);
 			site.setCustomPageOrdered(customOrder);
 		}
 
