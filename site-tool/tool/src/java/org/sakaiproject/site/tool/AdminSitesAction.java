@@ -1150,10 +1150,10 @@ public class AdminSitesAction extends PagedResourceActionII
 				{
 					addAlert(state, rb.getString("sitact.youdonot3") + " " + site.getId());
 				}
-				catch (IdUnusedException e)
-				{
-					addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
-				}
+//				catch (IdUnusedException e)
+//				{
+//					addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
+//				}
 			}
 		}
 
