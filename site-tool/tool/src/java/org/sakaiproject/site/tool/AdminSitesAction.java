@@ -1229,10 +1229,6 @@ public class AdminSitesAction extends PagedResourceActionII
 				} catch (IdUnusedException e) {
 					addAlert(state, rb.getFormattedMessage("sitact.thesitid2", new Object[]{site.getId()}));
 				}
-//				catch (IdUnusedException e)
-//				{
-//					addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
-//				}
 			}
 		}
 
@@ -1291,10 +1287,6 @@ public class AdminSitesAction extends PagedResourceActionII
 		} catch (IdUnusedException e) {
 			addAlert(state, rb.getFormattedMessage("sitact.thesitid2", new Object[]{site.getId()}));
 		}
-//		catch (IdUnusedException e)
-//		{
-//			addAlert(state, rb.getFormattedMessage("sitact.notfound", new Object[]{site.getId()}));
-//		}
 
 		// cleanup
 		cleanState(state);
